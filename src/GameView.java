@@ -14,7 +14,7 @@ public class GameView extends JFrame{
         this.game = game;
 
         this.p1 = game.getP1();
-        this.p2 = game.getP2()
+        this.p2 = game.getP2();
 
         // Show the window with the ball in its initial position.
         this.setTitle("Stickman Boxing");
@@ -25,7 +25,10 @@ public class GameView extends JFrame{
 
     public void paint(Graphics g) {
         // Clear the window.
-
+        g.setColor(Color.white);
+        g.fillRect(0, getInsets().top, getWidth(), getHeight());
+        p1.draw(g);
+        p2.draw(g);
     }
 
 
