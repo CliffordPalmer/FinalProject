@@ -1,7 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
-
+/**
+ * GameView (FrontEnd) class for Stick Figure Boxing
+ * @author: Clifford Palmer
+ * @version: 05/10/2024
+ */
 public class GameView extends JFrame{
     private int windowWidth, windowHeight;
 
@@ -9,21 +13,27 @@ public class GameView extends JFrame{
 
     private Player p1, p2;
     public GameView(int width, int height, Game game){
+        // Set window dimensions
         windowWidth = width;
         windowHeight = height;
 
+        // Give backend to frontend
         this.game = game;
 
+        // Give players to frontend
         this.p1 = game.getP1();
         this.p2 = game.getP2();
 
-        // Show the window with the ball in its initial position.
+        // Title and show the window
         this.setTitle("Stickman Boxing");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(width, height);
         this.setVisible(true);
+        // Double buffer window
         createBufferStrategy(2);
     }
+
+    // Double buffered paint method
     public void paint(Graphics g) {
         BufferStrategy bf = this.getBufferStrategy();
         if (bf == null)
@@ -47,10 +57,12 @@ public class GameView extends JFrame{
         //Drawing is done which looks very jerky
         Toolkit.getDefaultToolkit().sync();
     }
+    // Effective paint method
     public void myPaint(Graphics g) {
         // Clear the window.
         g.setColor(Color.white);
         g.fillRect(0, getInsets().top, getWidth(), getHeight());
+        // Draw players and game
         p1.draw(g);
         p2.draw(g);
         game.draw(g);
