@@ -246,19 +246,19 @@ public class Player {
         else if(playerNum == 2) {
             // Player two info bars
             g.setFont(new Font("Serif", Font.PLAIN, 15));
-            g.drawString("P2 Heatlh:", 580, 115);
-            g.drawString("Hit Charge:", 580, 155);
-            g.drawString("Block Charge:", 580, 195);
+            g.drawString("P2 Heatlh:", INFO_START_X + 560, INFO_START_Y);
+            g.drawString("Hit Charge:", INFO_START_X + 560, INFO_START_Y + 40);
+            g.drawString("Block Charge:", INFO_START_X + 560, INFO_START_Y + 80);
             g.setColor(Color.black);
-            g.drawRect(680, 100, INFO_BAR_WIDTH, INFO_BAR_HEIGHT);
-            g.drawRect(680, 140, INFO_BAR_WIDTH, INFO_BAR_HEIGHT);
-            g.drawRect(680, 180, INFO_BAR_WIDTH, INFO_BAR_HEIGHT);
+            g.drawRect(INFO_START_X + 660, INFO_START_Y - 15, INFO_BAR_WIDTH, INFO_BAR_HEIGHT);
+            g.drawRect(INFO_START_X + 660, INFO_START_Y + 25, INFO_BAR_WIDTH, INFO_BAR_HEIGHT);
+            g.drawRect(INFO_START_X + 660, INFO_START_Y + 65, INFO_BAR_WIDTH, INFO_BAR_HEIGHT);
             g.setColor(Color.RED);
-            g.fillRect(680, 100, health, INFO_BAR_HEIGHT);
+            g.fillRect(INFO_START_X + 660, INFO_START_Y - 15, health, INFO_BAR_HEIGHT);
             g.setColor(Color.yellow);
-            g.fillRect(680, 140, hitPercent, INFO_BAR_HEIGHT);
+            g.fillRect(INFO_START_X + 660, INFO_START_Y + 25, hitPercent, INFO_BAR_HEIGHT);
             g.setColor(Color.cyan);
-            g.fillRect(680, 180, blockPercent, INFO_BAR_HEIGHT);
+            g.fillRect(INFO_START_X + 660, INFO_START_Y + 65, blockPercent, INFO_BAR_HEIGHT);
             g.setColor(Color.red);
             // Normal arms
             if(costume == NORMAL_COSTUME) {
