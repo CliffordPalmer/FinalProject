@@ -32,6 +32,7 @@ public class Game implements KeyListener{
         // Share front end with Players
         p1.addWindow(window);
         p2.addWindow(window);
+        window.repaint();
     }
 
     public static void main(String[] args) {

@@ -165,6 +165,31 @@ public class Player {
         int INFO_BAR_HEIGHT = 20;
         int INFO_START_X = 20;
         int INFO_START_Y = 115;
+        int NORMAL_LEFT_ELBOW_X = 37;
+        int NORMAL_LEFT_ELBOW_Y = 97;
+        int NORMAL_LEFT_HAND_X = 50;
+        int NORMAL_LEFT_HAND_Y = 30;
+        int NORMAL_RIGHT_ELBOW_X = 30;
+        int NORMAL_RIGHT_ELBOW_Y = 85;
+        int NORMAL_RIGHT_HAND_X = 50;
+        int NORMAL_RIGHT_HAND_Y = 20;
+        int HIT_LEFT_ELBOW_X = 37;
+        int HIT_LEFT_ELBOW_Y = 65;
+        int HIT_LEFT_HAND_X = 55;
+        int HIT_LEFT_HAND_Y = 25;
+        int HIT_RIGHT_ELBOW_X = 30;
+        int HIT_RIGHT_ELBOW_Y = 55;
+        int HIT_RIGHT_HAND_X = 90;
+        int HIT_RIGHT_HAND_Y = 10;
+        int BLOCK_LEFT_ELBOW_X = 37;
+        int BLOCK_LEFT_ELBOW_Y = 47;
+        int BLOCK_LEFT_HAND_X = 50;
+        int BLOCK_LEFT_HAND_Y = 0;
+        int BLOCK_RIGHT_ELBOW_X = 30;
+        int BLOCK_RIGHT_ELBOW_Y = 65;
+        int BLOCK_RIGHT_HAND_X = 40;
+        int BLOCK_RIGHT_HAND_Y = 0;
+
         g.setFont(new Font("Serif", Font.PLAIN, 10));
         // Set color of player based on player number
         if(playerNum == 1){
@@ -197,24 +222,24 @@ public class Player {
             g.setColor(Color.blue);
             // Normal arms
             if(costume == NORMAL_COSTUME) {
-                g.drawLine(x, y + HEAD_RADIUS + 30, x + HEAD_RADIUS, y + HEAD_RADIUS + 60);
-                g.drawLine(x + HEAD_RADIUS, y + HEAD_RADIUS + 60, x + 50, y + 30);
-                g.drawLine(x, y + HEAD_RADIUS + 30, x + 30, y + 85);
-                g.drawLine(x + 30, y + 85, x + 50, y + 20);
+                g.drawLine(x, y + HEAD_RADIUS + 30, x + NORMAL_LEFT_ELBOW_X, y + NORMAL_LEFT_ELBOW_Y);
+                g.drawLine(x + NORMAL_LEFT_ELBOW_X, y + NORMAL_LEFT_ELBOW_Y, x + NORMAL_LEFT_HAND_X, y + NORMAL_LEFT_HAND_Y);
+                g.drawLine(x, y + HEAD_RADIUS + 30, x + NORMAL_RIGHT_ELBOW_X, y + NORMAL_RIGHT_ELBOW_Y);
+                g.drawLine(x + NORMAL_RIGHT_ELBOW_X, y + NORMAL_RIGHT_ELBOW_Y, x + NORMAL_RIGHT_HAND_X, y + NORMAL_RIGHT_HAND_Y);
             }
             // Arms while hitting
             if(costume == HIT_COSTUME){
-                g.drawLine(x, y + HEAD_RADIUS + 30, x + HEAD_RADIUS, y + 65);
-                g.drawLine(x + HEAD_RADIUS, y + 65, x + 55, y + 25);
-                g.drawLine(x, y + HEAD_RADIUS + 30, x + 30, y + 55);
-                g.drawLine(x + 30, y + 55, x + 90, y + 10);
+                g.drawLine(x, y + HEAD_RADIUS + 30, x + HIT_LEFT_ELBOW_X, y + HIT_LEFT_ELBOW_Y);
+                g.drawLine(x + HIT_LEFT_ELBOW_X, y + HIT_LEFT_ELBOW_Y, x + HIT_LEFT_HAND_X, y + HIT_LEFT_HAND_Y);
+                g.drawLine(x, y + HEAD_RADIUS + 30, x + HIT_RIGHT_ELBOW_X, y + HIT_RIGHT_ELBOW_Y);
+                g.drawLine(x + HIT_RIGHT_ELBOW_X, y + HIT_RIGHT_ELBOW_Y, x + HIT_RIGHT_HAND_X, y + HIT_RIGHT_HAND_Y);
             }
             // Arms while blocking
             if(costume == BLOCK_COSTUME){
-                g.drawLine(x, y + HEAD_RADIUS + 30, x + HEAD_RADIUS, y + HEAD_RADIUS + 10);
-                g.drawLine(x + HEAD_RADIUS, y + HEAD_RADIUS + 10, x + 50, y);
-                g.drawLine(x, y + HEAD_RADIUS + 30, x + 30, y + 65);
-                g.drawLine(x + 30, y + 65, x + 40, y);
+                g.drawLine(x, y + HEAD_RADIUS + 30, x + BLOCK_LEFT_ELBOW_X, y + BLOCK_LEFT_ELBOW_Y);
+                g.drawLine(x + BLOCK_LEFT_ELBOW_X, y + BLOCK_LEFT_ELBOW_Y, x + BLOCK_LEFT_HAND_X, y + BLOCK_LEFT_HAND_Y);
+                g.drawLine(x, y + HEAD_RADIUS + 30, x + BLOCK_RIGHT_ELBOW_X, y + BLOCK_RIGHT_ELBOW_Y);
+                g.drawLine(x + BLOCK_RIGHT_ELBOW_X, y + BLOCK_RIGHT_ELBOW_Y, x + BLOCK_RIGHT_HAND_X, y + BLOCK_RIGHT_HAND_Y);
             }
         }
         // Player two specifics
@@ -237,24 +262,24 @@ public class Player {
             g.setColor(Color.red);
             // Normal arms
             if(costume == NORMAL_COSTUME) {
-                g.drawLine(x, y + HEAD_RADIUS + 30, x - HEAD_RADIUS, y + HEAD_RADIUS + 60);
-                g.drawLine(x - HEAD_RADIUS, y + HEAD_RADIUS + 60, x - 50, y + 30);
-                g.drawLine(x, y + HEAD_RADIUS + 30, x - 30, y + 85);
-                g.drawLine(x - 30, y + 85, x - 50, y + 20);
+                g.drawLine(x, y + HEAD_RADIUS + 30, x - NORMAL_LEFT_ELBOW_X, y + NORMAL_LEFT_ELBOW_Y);
+                g.drawLine(x - NORMAL_LEFT_ELBOW_X, y + NORMAL_LEFT_ELBOW_Y, x - NORMAL_LEFT_HAND_X, y + NORMAL_LEFT_HAND_Y);
+                g.drawLine(x, y + HEAD_RADIUS + 30, x - NORMAL_RIGHT_ELBOW_X, y + NORMAL_RIGHT_ELBOW_Y);
+                g.drawLine(x - NORMAL_RIGHT_ELBOW_X, y + NORMAL_RIGHT_ELBOW_Y, x - NORMAL_RIGHT_HAND_X, y + NORMAL_RIGHT_HAND_Y);
             }
             // Arms while hitting
             if(costume == HIT_COSTUME){
-                g.drawLine(x, y + HEAD_RADIUS + 30, x - HEAD_RADIUS, y + 65);
-                g.drawLine(x - HEAD_RADIUS, y + 65, x - 55, y + 25);
-                g.drawLine(x, y + HEAD_RADIUS+ 30, x - 30, y + 55);
-                g.drawLine(x - 30, y + 55, x - 90, y + 10);
+                g.drawLine(x, y + HEAD_RADIUS + 30, x - HIT_LEFT_ELBOW_X, y + HIT_LEFT_ELBOW_Y);
+                g.drawLine(x - HIT_LEFT_ELBOW_X, y + HIT_LEFT_ELBOW_Y, x - HIT_LEFT_HAND_X, y + HIT_LEFT_HAND_Y);
+                g.drawLine(x, y + HEAD_RADIUS+ 30, x - HIT_RIGHT_ELBOW_X, y + HIT_RIGHT_ELBOW_Y);
+                g.drawLine(x - HIT_RIGHT_ELBOW_X, y + HIT_RIGHT_ELBOW_Y, x - HIT_RIGHT_HAND_X, y + HIT_RIGHT_HAND_Y);
             }
             // Arms while blocking
             if(costume == BLOCK_COSTUME){
-                g.drawLine(x, y + HEAD_RADIUS + 30, x - 75 / 2, y + HEAD_RADIUS + 10);
-                g.drawLine(x - HEAD_RADIUS, y + HEAD_RADIUS + 10, x - 50, y);
-                g.drawLine(x, y + HEAD_RADIUS + 30, x - 30, y + 65);
-                g.drawLine(x - 30, y + 65, x - 40, y);
+                g.drawLine(x, y + HEAD_RADIUS + 30, x - BLOCK_LEFT_ELBOW_X, y + BLOCK_LEFT_ELBOW_Y);
+                g.drawLine(x - BLOCK_LEFT_ELBOW_X, y + BLOCK_LEFT_ELBOW_Y, x - BLOCK_LEFT_HAND_X, y + BLOCK_LEFT_HAND_Y);
+                g.drawLine(x, y + HEAD_RADIUS + 30, x - BLOCK_RIGHT_ELBOW_X, y + BLOCK_RIGHT_ELBOW_Y);
+                g.drawLine(x - BLOCK_RIGHT_ELBOW_X, y + BLOCK_RIGHT_ELBOW_Y, x - BLOCK_RIGHT_HAND_X, y + BLOCK_RIGHT_HAND_Y);
             }
         }
 
