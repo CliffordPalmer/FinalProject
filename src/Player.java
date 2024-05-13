@@ -108,7 +108,6 @@ public class Player {
         if(canHit && !isBlocking) {
             costume = HIT_COSTUME;
             canHit = false;
-            isBlocking = true;
             hitPercent = 0;
             // Start a new thread to lockout the player from hitting until 1 second later
             new Thread(() -> {
